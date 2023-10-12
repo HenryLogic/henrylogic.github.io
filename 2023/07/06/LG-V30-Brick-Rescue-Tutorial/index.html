@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>LG V30救砖教程（9008，理论全版本通用） | Henry&#39;s Blog</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="Henry's Blog" type="application/atom+xml">
+  <meta name="description" content="警告：本帖仅为经验分享，不保证方法对每一位酷友的设备可行。所以非常抱歉，我和原作者们无法对酷友通过此方法对自己的设备造成的任何损坏担负责任。 ——————–分割线——————– 前言： 前阵子想着给自己的do版（日版）刷个MIUI，结果在混刷一半时手贱把LG UP软件退出了[t耐克嘴]，直接黑砖。fastboot，download模式均无法进入，便上网找救砖教程。 但国内中文貌似并无详细教程，便转">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LG V30救砖教程（9008，理论全版本通用）">
+<meta property="og:url" content="http://henrylogic.github.io/2023/07/06/LG-V30-Brick-Rescue-Tutorial/index.html">
+<meta property="og:site_name" content="Henry&#39;s Blog">
+<meta property="og:description" content="警告：本帖仅为经验分享，不保证方法对每一位酷友的设备可行。所以非常抱歉，我和原作者们无法对酷友通过此方法对自己的设备造成的任何损坏担负责任。 ——————–分割线——————– 前言： 前阵子想着给自己的do版（日版）刷个MIUI，结果在混刷一半时手贱把LG UP软件退出了[t耐克嘴]，直接黑砖。fastboot，download模式均无法进入，便上网找救砖教程。 但国内中文貌似并无详细教程，便转">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/7.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/8.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/9.jpeg">
+<meta property="og:image" content="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/10.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/11.jpeg">
+<meta property="og:image" content="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/12.jpeg">
+<meta property="article:published_time" content="2023-07-05T17:35:05.000Z">
+<meta property="article:modified_time" content="2023-10-01T16:18:10.000Z">
+<meta property="article:author" content="Henry">
+<meta property="article:tag" content="LG V30">
+<meta property="article:tag" content="9008">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/1.png">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="">
+  <meta name="keywords" content=",LG V30,9008">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Henry&#39;s Blog">
+  <meta name="msapplication-starturl" content="http://henrylogic.github.io/2023/07/06/LG-V30-Brick-Rescue-Tutorial/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Henry&#39;s Blog">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Thu Jul 06 2023 01:35:05 GMT+0800">
+    <meta property="article:modified_time" content="Mon Oct 02 2023 00:18:10 GMT+0800">
+  
+
+  
+    <link rel="canonical" href="http://henrylogic.github.io/2023/07/06/LG-V30-Brick-Rescue-Tutorial/">
+  
+
+  
+  
+
+  
+  
+  
+
+  
+<link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">Henry&#39;s Blog</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="Enter the key words">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Henry</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>海内存知己，天涯若比邻。</div>
+      </div>
+      
+        <div class="mdui-grid-tile-buttons">
+          <a href="mailto:酷安@亨利147" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '酷安@亨利147'}"><i class="mdui-icon material-icons">email</i></a>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">主页</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">archive</i>
+        <div class="mdui-list-item-content">归档</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2023/09/">九月 2023<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2023/07/">七月 2023<span class="mdui-ripple sidebar_archives-count">2</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">分类</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/categories/CoolApk/">酷安<span class="mdui-ripple sidebar_archives-count">3</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">标签</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/9008/" rel="tag">9008<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/LG-V30/" rel="tag">LG V30<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Manjaro/" rel="tag">Manjaro<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Mi-Watch/" rel="tag">小米手表<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Software/" rel="tag">软件资源<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">关于</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">友情链接</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="https://github.com" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Github</a>
+        
+          <a href="http://www.lvvguo.cn/" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">铝锅的小站</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/thumbnails/LG-V30-Brick-Rescue-Tutorial.jpg" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">LG V30救砖教程（9008，理论全版本通用）</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2023-07-06 / <i class="iconfont">&#xe601;</i> 酷安@亨利147</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC2UlEQVR42u3aW1LDMBAEwNz/0nAACjOzcsBI7a+USSy1UsVmH6+PI68XNjY2NjY2NjY29iPZr/j6+v7v7nz3/Os77et8z9jY2NgnsH/41x8vmX82uZMcQbJnbGxs7HPYsyXvDWbXO5ntGRsbGxv7eltt2tCuPns+NjY2NnZb0Em23ga5lWPFxsbGPpNdFGgC8PWT27bBDXvGxsbG3prdNnqf8PoP+tvY2NjYj2QvjTOOrvw5SeoyHL7ExsbG3oidNFnzDc0Ga9rgNGwwYGNjY2/Nnj101pTNV0+OrxgYwsbGxt6anZfjV8Z63tFOvl4dGxsb+2T2rAyUbzFvHidfw1IGho2Njb0Fe1asyT/VpiXJujcEMGxsbOwt2MkRrLSBVw6lbRL/EPawsbGxN2XPWgL5Z9tmQFt4KkIaNjY29qbs9sd99KN/VJBqB3rqhjE2Njb2puyVoZw8vK08p21ID7si2NjY2P+WnYeK9QJQXsbKD/36ILCxsbFPYL8vJchbsLP7+SgPNjY29mnsPGjNSkvvaPEuTSphY2Njb8GeDfHMBjdXiv7JVaQi2NjY2BuxVwpD+QHdm9jkz8HGxsbem51vsV2yDY2zcFg0lbGxsbEPYOfBIN/ESmKTH8FSAMPGxsbegj0bfJw1D/KGxPpXgo2NjX0Cu22ytlvM0482tagHerCxsbG3Zrc/+q8DVf7+WaAa7hYbGxt7a3beyk2axLMUIm/3DgtS2NjY2Aew20HJdhQyZ7crRoUtbGxs7E3Z7dUu1jYS8vDZ3sfGxsbeld2GoqS4v9J4mDWbo8ITNjY29tbstmSfB7mWlx9TUurCxsbGPo191wBNHvDyov8sxGJjY2NjR2X3ANCO5rSNh5u7ItjY2Nhbs9sC0OwgVpIWbGxs7JPZ6xtaSWCSxGbW0sDGxsY+gd2WbJK/rjRl6zTjd/rb2NjY2I9kn3NhY2NjY2NjY2NjP+b6BB49FUfUhk1cAAAAAElFTkSuQmCC">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=LG V30救砖教程（9008，理论全版本通用）&url=http://henrylogic.github.io/2023/07/06/LG-V30-Brick-Rescue-Tutorial/&pic=http://henrylogic.github.io/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到微博</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=LG V30救砖教程（9008，理论全版本通用）&url=http://henrylogic.github.io/2023/07/06/LG-V30-Brick-Rescue-Tutorial/&via=Henry" target="_blank" class="mdui-ripple">分享到Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://henrylogic.github.io/2023/07/06/LG-V30-Brick-Rescue-Tutorial/" target="_blank" class="mdui-ripple">分享到Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=http://henrylogic.github.io/2023/07/06/LG-V30-Brick-Rescue-Tutorial/" target="_blank" class="mdui-ripple">分享到Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://henrylogic.github.io/2023/07/06/LG-V30-Brick-Rescue-Tutorial/&title=LG V30救砖教程（9008，理论全版本通用）" target="_blank" class="mdui-ripple">分享到LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=Henry&#39;s Blog&title=LG V30救砖教程（9008，理论全版本通用）&summary=&pics=http://henrylogic.github.io/images/favicon.png&url=http://henrylogic.github.io/2023/07/06/LG-V30-Brick-Rescue-Tutorial/" target="_blank" class="mdui-ripple">分享到QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=http://henrylogic.github.io/2023/07/06/LG-V30-Brick-Rescue-Tutorial/&text=LG V30救砖教程（9008，理论全版本通用）" target="_blank" class="mdui-ripple">分享到Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <p>警告：本帖仅为经验分享，不保证方法对每一位酷友的设备可行。所以非常抱歉，我和原作者们无法对酷友通过此方法对自己的设备造成的任何损坏担负责任。</p>
+<p>——————–分割线——————–</p>
+<p>前言：</p>
+<p>前阵子想着给自己的do版（日版）刷个MIUI，结果在混刷一半时手贱把LG UP软件退出了[t耐克嘴]，直接黑砖。fastboot，download模式均无法进入，便上网找救砖教程。</p>
+<p>但国内中文貌似并无详细教程，便转到xda上找教程。发现了两位大佬的经验分享，救砖成功。我想将他们的帖子转过来，xda上留言给他们至今未回复。</p>
+<p>所以在这里先放原帖地址，各位英语好的可以先看原帖。部分文件还请移步原帖下载，我依据情况搬运文件过来。（大概率是度盘[t耐克嘴]，天翼网盘没空间了。）</p>
+<p><a target="_blank" rel="noopener" href="https://forum.xda-developers.com/t/lg-v30-unbrick-guide-qualcomm-edl-9008-mode-hardbirck-with-no-download-mode.4048661/">LG V30 Unbrick guide (Qualcomm EDL 9008 Mode, Hardbirck, with no download mode)</a></p>
+<p>——————–分割线——————–</p>
+<p>原理：</p>
+<p>手机在黑砖模式下进入9008模式被电脑软件QFIL识别。QFIL将在握手文件与配置文件的帮助下将线刷包刷进手机里去。（我并非技术大佬，只能谈谈自己的理解，大神们勿喷。[流汗滑稽]）</p>
+<p>其中握手文件和配置文件长下面这样：</p>
+<p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/1.png"><br><em>图中选中的为握手文件，其他为配置文件。</em></p>
+<p>线刷包的文件大致长下面这样：</p>
+<p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/2.png"><br><em>图中显示不完全，还有许多文件就不一一截图了，认识大致是这些东西就行。</em></p>
+<p>上图中的配置文件获取并不容易，且线刷包也只是一个版本，对应不同型号的机型线刷很大概率因为文件不符而报错失败。（如果你下载了上述xda论坛上的线刷包和配置文件，QFIL应该会提示丢失文件。）</p>
+<p>这时用记事本打开配置文件rawprogram0.xml，注意到每一行代码其实指向的是线刷包中的一个文件。</p>
+<p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/3.png"><br><em>rawprogram0.xml里的代码</em></p>
+<p>查看全部代码，且发现代码中有很多文件线刷包里面没有，所以我们需要删除这些多余的代码。实测这样可以成功刷入，且不会报错。虽然这样刷入少了部分文件进不了系统，但是可以进download模式了，download模式能进入就意味着成功。</p>
+<p>考虑到需要删除的代码过多，且比对过程复杂，xda上有位老哥放出了他改好的rawprogram0.xml和patch0.xml。我们直接下载他的这两个配置文件替换掉原来的就行。</p>
+<p>——————–分割线——————–</p>
+<p>准备工作：</p>
+<p>首先到上面xda帖子中翻到楼主下图所示位置，点击“link”字样，下载下图这两个文件。其中第一个link是下载的文件应该是个压缩包，里面包含了线刷包和配置文件。第二个link这是握手文件，也是QFIL线刷时的必要文件。</p>
+<p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/4.png"><br><em>可能需要魔法才能下载</em></p>
+<p>然后翻到下图这位用户的回复，他写了自己详细的刷机救砖过程，并上传了自己改好的配置文件。</p>
+<p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/5.png"><br><em>就是这位用户，在第二十层楼的回复。</em></p>
+<p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/6.png"><br><em>点击“the xml file here”字样，下载改好的配置文件。</em></p>
+<p>将上述的线刷包文件，握手文件和配置文件放到同一个文件夹里（重点）。再用改好的rawprogram0.xml和patch0.xml替换掉原来的rawprogram0.xml和patch0.xml。</p>
+<p>其他建议的准备工作：</p>
+<p>所有涉及的文件路径建议不要有中文或者其他特殊符号，最好全字母。</p>
+<p>建议退出杀毒软件。</p>
+<p>建议以管理员身份运行所有救砖要用的软件。</p>
+<p>驱动搞不定的装个驱动精灵（老毒瘤了[t耐克嘴]），也可以下载MiFlash，这玩意会帮你装一部分驱动。（反正以后应该也用得到。[流汗滑稽]）</p>
+<p>——————–分割线——————–</p>
+<p>线刷操作部分：</p>
+<p>主要介绍QFIL的操作。</p>
+<p>首先把手机连上电脑，打开电脑设备管理器，看能不能看到有“9008”字样的设备。或者直接打开QFIL，我这里显示的是“Qualcomm HS-USB QDLoader 9008 (COM10)”，大致这样就显示电脑已经识别了手机了。</p>
+<p>我的没有需要特别操作连电脑就能识别。不能识别的检查驱动问题，网上搜一下进入9008模式的办法。</p>
+<p>点击软件上方“Configuration”字样，再点击弹出的“FireHouse Configuration”字样。</p>
+<p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/7.png"><br><em>点击这里</em></p>
+<p>弹出的窗口中“Device Type”字样后面选择“ufs”，然后图中两个打勾的选项勾上。（其他的项目不用动。）</p>
+<p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/8.png"><br><em>弹出的窗口中，按图中这样设置。</em></p>
+<p>在软件主界面，“Select Build Type”字样下面选择“Flat Build”。“Select Programmer”字样下面点击右边的“Browse”按钮，选择firehouse握手文件。“Select Flat Build”字样下面右边“Load XML”按钮，先选择全部带“rawprogram”字样的文件，再选择全部带“patch”字样的文件。选择完成后点击蓝色“Download”按钮就行，效果如图所示。</p>
+<p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/9.jpeg"></p>
+<p>如果还有报错，就看报错却什么文件。我当时是却一个叫“abl.elf_64582”的文件，发现解压的线刷包文件中刚好有个“abl.elf”文件，后缀名中没有像其他文件那样的编号数字。果断重命名，线刷成功。</p>
+<p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/10.png"></p>
+<p>看却啥就改啥，删代码或者改文件名都行。xda上那位改配置文件的老哥已经帮我们省了很多功夫。</p>
+<p>——————–分割线——————–</p>
+<p>收尾：</p>
+<p>此时刷完以后，手机就应该有所反应了。我的是无限重启，此时按住音量+键不放，看准它重启一次完成后黑屏的瞬间（此时还未重启第二次）连接电脑，成功进入download模式。</p>
+<p>打开LG UP，此时便可进行混刷，注意选择“Chip Erase”模式进行混刷。（重点）</p>
+<p>文件下载：</p>
+<p>可到xda上下载，软件一类的的网上可搜到。（如果酷友需要的话我整理自己的资源发上来。）</p>
+<p>——————–分割线——————–</p>
+<p>教程至此完结，希望能给各位酷友带来一点帮助。主要是精力有限（懒）[表面开心]，一篇教程拖了这么久，给大家说声抱歉。</p>
+<p>后续给手机刷了MIUI，也是段艰难的经历（因为机锋没了[doge笑哭]）看酷友需要有时间出个刷MIUI的教程。</p>
+<p>我只有百度网盘有空间分享，这还不如各位酷友自己去xda上下的快。[t耐克嘴]</p>
+<p>绠短汲深，有误的地方还请酷友指正。也欢迎酷友在评论区留言提问与讨论。</p>
+<p>码字不易，最后@酷安小编 赏个头条。[py交易][py交易]</p>
+<h2 id="评论区"><a href="#评论区" class="headerlink" title="评论区"></a><a href="https://henrylogic.github.io/2023/07/06/LG-V30%E6%95%91%E7%A0%96%E6%95%99%E7%A8%8B%EF%BC%889008%EF%BC%8C%E7%90%86%E8%AE%BA%E5%85%A8%E7%89%88%E6%9C%AC%E9%80%9A%E7%94%A8%EF%BC%89/#%E8%AF%84%E8%AE%BA%E5%8C%BA" title="评论区"></a>评论区</h2><p>@墨染nlx</p>
+<p>932就别试了[流汗滑稽]，cpu加密导致v30的握手文件用不了，得用专属的握手文件，而我们又没有932的握手文件[受虐滑稽]</p>
+<p>@刘芳全</p>
+<p>Vs996专用，QFIO刷入，需清空所有分区，刷完自动开机，无须硬格</p>
+<p>下图网盘里有教程，用qifi清空所有分区线刷h933 10f救砖包，开机后顺便再刷三个kdz,这是vs996升官九或刷类原生必走的流程，搞不懂可以私我<br><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/11.jpeg"></p>
+<p>不要怕有网络锁，或丢失串号，sn码之类的，那个后面可以写上的<br><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/12.jpeg"></p>
+<p>@lbwnb_24k</p>
+<p>楼主，Sahara fail怎么破，已经试过禁用签名，重打驱动，换端口换线等操作<br>本来是想刷个pie的，照着一个xda的帖子刷了h93310h，然后download和fastboot都进不去我的是us998的，电脑是Windows11但用的是usb2.0的口，另一台电脑是win10笔记本，但是没有usb3.0的口</p>
+<p>@亨利147</p>
+<p>我也遇到过这个错误，当时是在第一次线刷之后提示缺失文件，然后我删减了相应代码和改名相关文件后（期间QFIL软件一直没关闭）然后再刷时出现的这个错误。</p>
+<p>我的解决方法当时就是把软件关了重启就可以正常刷了。</p>
+<p>这里很抱歉只能给老哥如下建议老哥可以试试：</p>
+<p>把所有文件准备好之后再打开QFIL。最好以管理员身份运行（QFIL软件安装目录最好也是全英文的）然后选择相应文件。如若还是报这个错，把软件关闭再运行一次。再次选完文件然后再刷试试看。</p>
+<p>@lbwnb_24k</p>
+<p>谢谢楼主，我花了45大洋，那个人换了个包，修了下usb3.0给我刷上去了，我想大概是包的问题</p>
+
+      <blockquote class="mdui-m-t-5">
+        
+        <strong>本文链接：</strong><a href="http://henrylogic.github.io/2023/07/06/LG-V30-Brick-Rescue-Tutorial/">http://henrylogic.github.io/2023/07/06/LG-V30-Brick-Rescue-Tutorial/</a>
+      </blockquote>
+      
+    </div>
+    <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/CoolApk/">酷安</a>
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/9008/" rel="tag">9008</a><a class="mdui-ripple article_tags-link" href="/tags/LG-V30/" rel="tag">LG V30</a>
+      
+    </footer>
+    
+  </article>
+  
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+      <a rel="prev" class="extend prev" href="/2023/09/11/Xiaohongshu-Version-7.90.0-is-Shared-on-123-Online-Drive/">
+        <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上一篇
+      </a>
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2023/07/06/Hello-World/">
+        下一篇&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+  <div id="comment" class="mdui-m-t-5">
+    <div>
+    <section id="comments" class="comments">
+      <script src="https://giscus.app/client.js"
+              data-repo="HenryLogic/giscus"
+              data-repo-id="R_kgDOKVz7yg"
+              data-category="Announcements"
+              data-category-id="DIC_kwDOKVz7ys4CZeNF"
+              data-mapping="title"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="bottom"
+              data-theme="light"
+              data-lang="zh-CN"
+              crossorigin="anonymous"
+              async>
+      </script>
+     </section>
+</div>
+
+  </div>
+
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2023 - 2023 Henry<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  
+<script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>关于小米手表同步不上问题的个人解决方案 | Henry&#39;s Blog</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="Henry's Blog" type="application/atom+xml">
+  <meta name="description" content="用了段时间这个表了，发现讨论区里好多说同步不上的。确实小米穿戴这软件做的是依托答辩。不过个人摸索出了一些方法分享给大家，为个人经验，不保证通用。 先说一下个人手表软件的使用习惯：平时我wear os（本文wear os均指手机上的wear os app）和小米穿戴都是不挂后台的，只有在同步时才打开。当然我这份方法对经常挂后台的用户也应该是可以用的，我做的其实很简单，就是重启软件。接下来说说操作步骤">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于小米手表同步不上问题的个人解决方案">
+<meta property="og:url" content="http://henrylogic.github.io/2023/09/23/Personal-Solution-to-the-Problem-of-Missynchronization-of-Xiaomi-Watches/index.html">
+<meta property="og:site_name" content="Henry&#39;s Blog">
+<meta property="og:description" content="用了段时间这个表了，发现讨论区里好多说同步不上的。确实小米穿戴这软件做的是依托答辩。不过个人摸索出了一些方法分享给大家，为个人经验，不保证通用。 先说一下个人手表软件的使用习惯：平时我wear os（本文wear os均指手机上的wear os app）和小米穿戴都是不挂后台的，只有在同步时才打开。当然我这份方法对经常挂后台的用户也应该是可以用的，我做的其实很简单，就是重启软件。接下来说说操作步骤">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-09-23T06:12:48.000Z">
+<meta property="article:modified_time" content="2023-10-01T14:10:35.000Z">
+<meta property="article:author" content="Henry">
+<meta property="article:tag" content="小米手表">
+<meta name="twitter:card" content="summary">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="">
+  <meta name="keywords" content=",小米手表">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Henry&#39;s Blog">
+  <meta name="msapplication-starturl" content="http://henrylogic.github.io/2023/09/23/Personal-Solution-to-the-Problem-of-Missynchronization-of-Xiaomi-Watches/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Henry&#39;s Blog">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Sat Sep 23 2023 14:12:48 GMT+0800">
+    <meta property="article:modified_time" content="Sun Oct 01 2023 22:10:35 GMT+0800">
+  
+
+  
+    <link rel="canonical" href="http://henrylogic.github.io/2023/09/23/Personal-Solution-to-the-Problem-of-Missynchronization-of-Xiaomi-Watches/">
+  
+
+  
+  
+
+  
+  
+  
+
+  
+<link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">Henry&#39;s Blog</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="Enter the key words">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Henry</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>海内存知己，天涯若比邻。</div>
+      </div>
+      
+        <div class="mdui-grid-tile-buttons">
+          <a href="mailto:酷安@亨利147" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '酷安@亨利147'}"><i class="mdui-icon material-icons">email</i></a>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">主页</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">archive</i>
+        <div class="mdui-list-item-content">归档</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2023/09/">九月 2023<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2023/07/">七月 2023<span class="mdui-ripple sidebar_archives-count">2</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">分类</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/categories/CoolApk/">酷安<span class="mdui-ripple sidebar_archives-count">3</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">标签</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/9008/" rel="tag">9008<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/LG-V30/" rel="tag">LG V30<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Manjaro/" rel="tag">Manjaro<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Mi-Watch/" rel="tag">小米手表<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Software/" rel="tag">软件资源<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">关于</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">友情链接</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="https://github.com" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Github</a>
+        
+          <a href="http://www.lvvguo.cn/" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">铝锅的小站</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-17.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">关于小米手表同步不上问题的个人解决方案</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2023-09-23 / <i class="iconfont">&#xe601;</i> 酷安@亨利147</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEGUlEQVR42u3aS24jMQwFQN//0sl2gEl63iPbA1uuXgWJI0vVC4qfx5cneB4IMGHChAkTJg8mTJgwvTzTI35+Xe6Pv7b/+/cK+ZrX67cr/LAHTJgwYcJ0EFN7jOuttMdrf/7tGxP04lVhwoQJE6bjmJ59jPaSkeBe73Z2RkyYMGHChOl6hU1qPUu5k9eDCRMmTJgwzZja1DQP+cnnrz+DCRMmTJgwtQXQPJAnR5oVlO/9KyZMmDBh+gSm57UeX+fn/zrfhAkTJkyYXoapfZILQb5Ce/nYjBnVJ8WECRMmTEcw5YEzP1LSXGzDc9vs3BSUMWHChAnTSUyz4Jqnx+1lIm9V5oM7+QvDhAkTJkznMV0H9WjAJR+FidePAnZZmK5fKiZMmDBhOohpNnDTEm8S1Ly4PEvdMWHChAnTJzBdB/L8rxvK6/Xbb9k0QTFhwoQJ06lMdw3uJOnljCYvB+fDQ5gwYcKE6VSm4RJlijsb3GmHeG4uImPChAkTpkOZ8qS3Lf7OQnjejNw0Mm+bb8KECRMmTC/GNBuRSWg2G22bqfnlJv8MJkyYMGE6g2l2CUiKsMWITPz5nK9NejFhwoQJ09lMeVLabvGuEm3e4JylxFGRFxMmTJgwvSHT5pCbtmUL16bcs6EfTJgwYcL0mUz517Tl3ZyjHrsZvSRMmDBhwnQeU9sCzLeYl5Lz1unzxoAwYcKECdPZTPuhnNkWk/R1k2bPUmVMmDBhwnQS06xgmuPmae2GflPwHVYIMGHChAnTmzBtyrttirtpduYDRrftHBMmTJgwHcG0Cbf7cupdbdGoPVkm2JgwYcKE6QymTcF31hB9RpqdfL7+dkyYMGHCdBBTFCDL8m5StG3HcYahvbxMYMKECROmk5iSzW2KubMxoE0gT2hWRV5MmDBhwvSGTHk5NR8DbY+xKRzPsOpaOCZMmDBhekOmTftwFnTbxPgrftrk+R/7xIQJEyZMBzG1B9gcO1ln3/Kc7QoTJkyYMJ3HNDv8LADnoz+zkN/+LyZMmDBh+hymditJOE+2m4wBteXdzfqYMGHChOk8ps0gTrv19vfPaFgmn8SECRMmTOcxtQMxLfEskOcvr22sRt+FCRMmTJiOYEqWeMRPkga3q21AZ21UTJgwYcJ0EtNdDcW2HNwmw8mLzNdfzTdhwoQJE6a3YpqF5w3K7JBtoTkZG6pTX0yYMGHC9LZMs9bmflS0LRAne2gvBJgwYcKE6XOYNgF1xt1ePvJ25qaIjAkTJkyYMN2b6LYp9GbAKDkvJkyYMGHClLch2+O15dp2/0USjgkTJkyYjmNKguhmgKYIxnGDc4P1xFo4JkyYMGF6MaZ2CKYN8DP0vCGaXzKKKw4mTJgwYTqCyRNdCDyYMGHChAkTJg8mTJhe5fkGI5tx4Vxk57EAAAAASUVORK5CYII=">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=关于小米手表同步不上问题的个人解决方案&url=http://henrylogic.github.io/2023/09/23/Personal-Solution-to-the-Problem-of-Missynchronization-of-Xiaomi-Watches/&pic=http://henrylogic.github.io/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到微博</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=关于小米手表同步不上问题的个人解决方案&url=http://henrylogic.github.io/2023/09/23/Personal-Solution-to-the-Problem-of-Missynchronization-of-Xiaomi-Watches/&via=Henry" target="_blank" class="mdui-ripple">分享到Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://henrylogic.github.io/2023/09/23/Personal-Solution-to-the-Problem-of-Missynchronization-of-Xiaomi-Watches/" target="_blank" class="mdui-ripple">分享到Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=http://henrylogic.github.io/2023/09/23/Personal-Solution-to-the-Problem-of-Missynchronization-of-Xiaomi-Watches/" target="_blank" class="mdui-ripple">分享到Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://henrylogic.github.io/2023/09/23/Personal-Solution-to-the-Problem-of-Missynchronization-of-Xiaomi-Watches/&title=关于小米手表同步不上问题的个人解决方案" target="_blank" class="mdui-ripple">分享到LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=Henry&#39;s Blog&title=关于小米手表同步不上问题的个人解决方案&summary=&pics=http://henrylogic.github.io/images/favicon.png&url=http://henrylogic.github.io/2023/09/23/Personal-Solution-to-the-Problem-of-Missynchronization-of-Xiaomi-Watches/" target="_blank" class="mdui-ripple">分享到QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=http://henrylogic.github.io/2023/09/23/Personal-Solution-to-the-Problem-of-Missynchronization-of-Xiaomi-Watches/&text=关于小米手表同步不上问题的个人解决方案" target="_blank" class="mdui-ripple">分享到Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <p>用了段时间这个表了，发现讨论区里好多说同步不上的。确实小米穿戴这软件做的是依托答辩。不过个人摸索出了一些方法分享给大家，为个人经验，不保证通用。</p>
+<p>先说一下个人手表软件的使用习惯：平时我wear os（本文wear os均指手机上的wear os app）和小米穿戴都是不挂后台的，只有在同步时才打开。当然我这份方法对经常挂后台的用户也应该是可以用的，我做的其实很简单，就是重启软件。接下来说说操作步骤：</p>
+<p>首先打开手机和手表的蓝牙，确保它们蓝牙先连接上。（值得注意的是，制作wear os这个软件的作者可能意识到手表要长时间连着手机的性质，所以蓝牙连接时手机状态栏没有蓝牙图标是正常的。）</p>
+<p>然后先打开wear os软件，确保你的软件是不在后台的情况下冷启动的，平常不压后台的用户去设置里面强行停止wear os。</p>
+<p>此时wear os 应该显示已连接之类的字样。</p>
+<p>然后在打开小米穿戴。方法同上wearos，确保已经强行停止该app。</p>
+<p>不出意外的话这时就已经可以同步了。如果不行就再来一次以上步骤。（可以只再来一次打开小米穿戴的步骤都行，一般wear os那边其实没什么问题。）</p>
+<p>一般这样就可以同步成功了。</p>
+<p>个人推测其实wear os应该是负责传输手表数据到手机上的。小米穿戴只是负责读取wear os获得的数据而已。</p>
+<p>全文完。</p>
+
+      <blockquote class="mdui-m-t-5">
+        
+        <strong>本文链接：</strong><a href="http://henrylogic.github.io/2023/09/23/Personal-Solution-to-the-Problem-of-Missynchronization-of-Xiaomi-Watches/">http://henrylogic.github.io/2023/09/23/Personal-Solution-to-the-Problem-of-Missynchronization-of-Xiaomi-Watches/</a>
+      </blockquote>
+      
+    </div>
+    <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/CoolApk/">酷安</a>
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/Mi-Watch/" rel="tag">小米手表</a>
+      
+    </footer>
+    
+  </article>
+  
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+      <a rel="prev" class="extend prev" href="/2023/09/30/Manjaro-Configuration-of-Source-Input-Method-Connecting-to-The-World/">
+        <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上一篇
+      </a>
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2023/09/11/Xiaohongshu-Version-7.90.0-is-Shared-on-123-Online-Drive/">
+        下一篇&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+  <div id="comment" class="mdui-m-t-5">
+    <div>
+    <section id="comments" class="comments">
+      <script src="https://giscus.app/client.js"
+              data-repo="HenryLogic/giscus"
+              data-repo-id="R_kgDOKVz7yg"
+              data-category="Announcements"
+              data-category-id="DIC_kwDOKVz7ys4CZeNF"
+              data-mapping="title"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="bottom"
+              data-theme="light"
+              data-lang="zh-CN"
+              crossorigin="anonymous"
+              async>
+      </script>
+     </section>
+</div>
+
+  </div>
+
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2023 - 2023 Henry<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  
+<script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+
+</body>
+</html>

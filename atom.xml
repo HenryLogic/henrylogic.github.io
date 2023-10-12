@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Henry&#39;s Blog</title>
+  
+  <subtitle>海内存知己，天涯若比邻。</subtitle>
+  <link href="http://henrylogic.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://henrylogic.github.io/"/>
+  <updated>2023-10-01T14:15:21.000Z</updated>
+  <id>http://henrylogic.github.io/</id>
+  
+  <author>
+    <name>Henry</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Manjaro配置源，输入法，连接世界</title>
+    <link href="http://henrylogic.github.io/2023/09/30/Manjaro-Configuration-of-Source-Input-Method-Connecting-to-The-World/"/>
+    <id>http://henrylogic.github.io/2023/09/30/Manjaro-Configuration-of-Source-Input-Method-Connecting-to-The-World/</id>
+    <published>2023-09-29T17:41:51.000Z</published>
+    <updated>2023-10-01T14:15:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>个人自用方法，亲测可行，整理于网络。</p><p>更换国内源</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman-mirrors -i -c China -m rank</span><br></pre></td></tr></table></figure><p>这时系统会对中国的镜像进行测速，并在弹出窗口中列出</p><p>选择较快的两个即可</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy</span><br></pre></td></tr></table></figure><p>添加ArchLinuxCN源，文本编辑&#x2F;etc&#x2F;pacman.conf增添以下内容</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line">Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch</span><br></pre></td></tr></table></figure><p>然后执行以下命令以更新缓存以及导入密钥链。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring</span><br></pre></td></tr></table></figure><p>执行以下命令更新系统以及软件包</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syyu</span><br></pre></td></tr></table></figure><p>输入法安装</p><p>安装fcitx5（输入法框架）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S fcitx5-im</span><br></pre></td></tr></table></figure><p>配置fcitx5的环境变量：</p><p>主目录下新建.xprofile文件，以文本模式编辑</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export XMODIFIERS=@im=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br></pre></td></tr></table></figure><p>安装fcitx5-rime（输入法引擎）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S fcitx5-rime</span><br></pre></td></tr></table></figure><p>安装rime-cloverpinyin（输入方案）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S rime-cloverpinyin</span><br></pre></td></tr></table></figure><p>如果出现问题可能还需要做下面这步：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S base-devel</span><br></pre></td></tr></table></figure><p>创建并写入rime-cloverpinyin的输入方案：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano ~/.local/share/fcitx5/rime/default.custom.yaml</span><br></pre></td></tr></table></figure><p>内容为：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">patch:</span><br><span class="line">  &quot;menu/page_size&quot;: 5</span><br><span class="line">  schema_list:</span><br><span class="line">    - schema: clover</span><br></pre></td></tr></table></figure><p>clash GUI</p><p>clash 是一款非常强大的上网神器，现在在 Linux 平台下也推出了 GUI 版本。</p><p>可以直接通过 yay 安装，也可以手动安装：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yay -S clash-for-windows-bin</span><br></pre></td></tr></table></figure><p>点击 general 勾选 allow lan、tun mode、mixin、start with linux 等选项。</p><p><img src="https://pic2.zhimg.com/80/v2-08d61f749d727931c1c27c4969839229_720w.webp"></p><p>在系统设置中，手动添加全局代理 127.0.0.1:7890。</p><p><img src="https://pic4.zhimg.com/80/v2-2e006f7e8bea14965ef89a436937b1eb_720w.webp"></p><p>注意！Mozilla 系列软件是不会直接走系统代理的，如 firefox、thunderbird 等都需要在 settings 中使用手动设置代理。</p><p><img src="https://pic2.zhimg.com/80/v2-1c0526ea8c171d8e33cde1d72d1937d5_720w.webp"></p><p>添加终端代理，在 ~&#x2F;.zshrc 中添加以下命令：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alias setproxy=&quot;export ALL_PROXY=socks5://127.0.0.1:7890; echo &#x27;SET PROXY SUCCESS!!!&#x27;&quot;</span><br><span class="line">alias unsetproxy=&quot;unset ALL_PROXY; echo &#x27;UNSET PROXY SUCCESS!!!&#x27;&quot;</span><br><span class="line"># 打开终端自动开启代理</span><br><span class="line">setproxy</span><br></pre></td></tr></table></figure><p>source 一下 zshrc 文件，并输入 setproxy 命令即可打开代理。</p><p>验证代理是否生效，可输入以下命令并观察请求是否先发送至 127.0.0.1:7890 处：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -vv http://www.youtube.com/</span><br></pre></td></tr></table></figure><p>由于是 tar.gz 安装，所以安装完成后没有可视化的启动程序。</p><p>我们自建一个启动程序，在 ~&#x2F;.local&#x2F;share&#x2F;applications 下新建以下文件，提前下载好一个 PNG 格式的 clash 图标放在安装目录下：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~/.local/share/applications/clash.desktop</span><br><span class="line"></span><br><span class="line">[Desktop Entry]</span><br><span class="line">Type=Application</span><br><span class="line">Name=Clash For Linux</span><br><span class="line">Exec=/usr/local/clash/cfw</span><br><span class="line">Icon=/usr/local/clash/clash.png</span><br><span class="line">Terminal=false</span><br><span class="line">Categories=program;InstantMessaging</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;个人自用方法，亲测可行，整理于网络。&lt;/p&gt;
+&lt;p&gt;更换国内源&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pr</summary>
+      
+    
+    
+    
+    
+    <category term="Manjaro" scheme="http://henrylogic.github.io/tags/Manjaro/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于小米手表同步不上问题的个人解决方案</title>
+    <link href="http://henrylogic.github.io/2023/09/23/Personal-Solution-to-the-Problem-of-Missynchronization-of-Xiaomi-Watches/"/>
+    <id>http://henrylogic.github.io/2023/09/23/Personal-Solution-to-the-Problem-of-Missynchronization-of-Xiaomi-Watches/</id>
+    <published>2023-09-23T06:12:48.000Z</published>
+    <updated>2023-10-01T14:10:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>用了段时间这个表了，发现讨论区里好多说同步不上的。确实小米穿戴这软件做的是依托答辩。不过个人摸索出了一些方法分享给大家，为个人经验，不保证通用。</p><p>先说一下个人手表软件的使用习惯：平时我wear os（本文wear os均指手机上的wear os app）和小米穿戴都是不挂后台的，只有在同步时才打开。当然我这份方法对经常挂后台的用户也应该是可以用的，我做的其实很简单，就是重启软件。接下来说说操作步骤：</p><p>首先打开手机和手表的蓝牙，确保它们蓝牙先连接上。（值得注意的是，制作wear os这个软件的作者可能意识到手表要长时间连着手机的性质，所以蓝牙连接时手机状态栏没有蓝牙图标是正常的。）</p><p>然后先打开wear os软件，确保你的软件是不在后台的情况下冷启动的，平常不压后台的用户去设置里面强行停止wear os。</p><p>此时wear os 应该显示已连接之类的字样。</p><p>然后在打开小米穿戴。方法同上wearos，确保已经强行停止该app。</p><p>不出意外的话这时就已经可以同步了。如果不行就再来一次以上步骤。（可以只再来一次打开小米穿戴的步骤都行，一般wear os那边其实没什么问题。）</p><p>一般这样就可以同步成功了。</p><p>个人推测其实wear os应该是负责传输手表数据到手机上的。小米穿戴只是负责读取wear os获得的数据而已。</p><p>全文完。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;用了段时间这个表了，发现讨论区里好多说同步不上的。确实小米穿戴这软件做的是依托答辩。不过个人摸索出了一些方法分享给大家，为个人经验，不保证通用。&lt;/p&gt;
+&lt;p&gt;先说一下个人手表软件的使用习惯：平时我wear os（本文wear os均指手机上的wear os app）和小米</summary>
+      
+    
+    
+    
+    <category term="酷安" scheme="http://henrylogic.github.io/categories/CoolApk/"/>
+    
+    
+    <category term="小米手表" scheme="http://henrylogic.github.io/tags/Mi-Watch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>目前自用小红书7.90.0版本123云盘分享</title>
+    <link href="http://henrylogic.github.io/2023/09/11/Xiaohongshu-Version-7.90.0-is-Shared-on-123-Online-Drive/"/>
+    <id>http://henrylogic.github.io/2023/09/11/Xiaohongshu-Version-7.90.0-is-Shared-on-123-Online-Drive/</id>
+    <published>2023-09-11T12:58:00.000Z</published>
+    <updated>2023-10-01T14:12:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>目前自用小红书7.90.0版本123云盘分享<a href="https://www.123pan.com/s/6xKKVv-a8ppA.html">查看链接</a><br>也是取自酷友们的，但看到很多人都说没一个好的网盘分享自己就传了一个，123网盘应该是可以不要客户端下载的吧。[流汗滑稽]（安装包大于100m所以用不了蓝奏）</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;目前自用小红书7.90.0版本123云盘分享&lt;a href=&quot;https://www.123pan.com/s/6xKKVv-a8ppA.html&quot;&gt;查看链接&lt;/a&gt;&lt;br&gt;也是取自酷友们的，但看到很多人都说没一个好的网盘分享自己就传了一个，123网盘应该是可以不要客户端下</summary>
+      
+    
+    
+    
+    <category term="酷安" scheme="http://henrylogic.github.io/categories/CoolApk/"/>
+    
+    
+    <category term="软件资源" scheme="http://henrylogic.github.io/tags/Software/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LG V30救砖教程（9008，理论全版本通用）</title>
+    <link href="http://henrylogic.github.io/2023/07/06/LG-V30-Brick-Rescue-Tutorial/"/>
+    <id>http://henrylogic.github.io/2023/07/06/LG-V30-Brick-Rescue-Tutorial/</id>
+    <published>2023-07-05T17:35:05.000Z</published>
+    <updated>2023-10-01T16:18:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>警告：本帖仅为经验分享，不保证方法对每一位酷友的设备可行。所以非常抱歉，我和原作者们无法对酷友通过此方法对自己的设备造成的任何损坏担负责任。</p><p>——————–分割线——————–</p><p>前言：</p><p>前阵子想着给自己的do版（日版）刷个MIUI，结果在混刷一半时手贱把LG UP软件退出了[t耐克嘴]，直接黑砖。fastboot，download模式均无法进入，便上网找救砖教程。</p><p>但国内中文貌似并无详细教程，便转到xda上找教程。发现了两位大佬的经验分享，救砖成功。我想将他们的帖子转过来，xda上留言给他们至今未回复。</p><p>所以在这里先放原帖地址，各位英语好的可以先看原帖。部分文件还请移步原帖下载，我依据情况搬运文件过来。（大概率是度盘[t耐克嘴]，天翼网盘没空间了。）</p><p><a href="https://forum.xda-developers.com/t/lg-v30-unbrick-guide-qualcomm-edl-9008-mode-hardbirck-with-no-download-mode.4048661/">LG V30 Unbrick guide (Qualcomm EDL 9008 Mode, Hardbirck, with no download mode)</a></p><p>——————–分割线——————–</p><p>原理：</p><p>手机在黑砖模式下进入9008模式被电脑软件QFIL识别。QFIL将在握手文件与配置文件的帮助下将线刷包刷进手机里去。（我并非技术大佬，只能谈谈自己的理解，大神们勿喷。[流汗滑稽]）</p><p>其中握手文件和配置文件长下面这样：</p><p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/1.png"><br><em>图中选中的为握手文件，其他为配置文件。</em></p><p>线刷包的文件大致长下面这样：</p><p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/2.png"><br><em>图中显示不完全，还有许多文件就不一一截图了，认识大致是这些东西就行。</em></p><p>上图中的配置文件获取并不容易，且线刷包也只是一个版本，对应不同型号的机型线刷很大概率因为文件不符而报错失败。（如果你下载了上述xda论坛上的线刷包和配置文件，QFIL应该会提示丢失文件。）</p><p>这时用记事本打开配置文件rawprogram0.xml，注意到每一行代码其实指向的是线刷包中的一个文件。</p><p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/3.png"><br><em>rawprogram0.xml里的代码</em></p><p>查看全部代码，且发现代码中有很多文件线刷包里面没有，所以我们需要删除这些多余的代码。实测这样可以成功刷入，且不会报错。虽然这样刷入少了部分文件进不了系统，但是可以进download模式了，download模式能进入就意味着成功。</p><p>考虑到需要删除的代码过多，且比对过程复杂，xda上有位老哥放出了他改好的rawprogram0.xml和patch0.xml。我们直接下载他的这两个配置文件替换掉原来的就行。</p><p>——————–分割线——————–</p><p>准备工作：</p><p>首先到上面xda帖子中翻到楼主下图所示位置，点击“link”字样，下载下图这两个文件。其中第一个link是下载的文件应该是个压缩包，里面包含了线刷包和配置文件。第二个link这是握手文件，也是QFIL线刷时的必要文件。</p><p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/4.png"><br><em>可能需要魔法才能下载</em></p><p>然后翻到下图这位用户的回复，他写了自己详细的刷机救砖过程，并上传了自己改好的配置文件。</p><p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/5.png"><br><em>就是这位用户，在第二十层楼的回复。</em></p><p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/6.png"><br><em>点击“the xml file here”字样，下载改好的配置文件。</em></p><p>将上述的线刷包文件，握手文件和配置文件放到同一个文件夹里（重点）。再用改好的rawprogram0.xml和patch0.xml替换掉原来的rawprogram0.xml和patch0.xml。</p><p>其他建议的准备工作：</p><p>所有涉及的文件路径建议不要有中文或者其他特殊符号，最好全字母。</p><p>建议退出杀毒软件。</p><p>建议以管理员身份运行所有救砖要用的软件。</p><p>驱动搞不定的装个驱动精灵（老毒瘤了[t耐克嘴]），也可以下载MiFlash，这玩意会帮你装一部分驱动。（反正以后应该也用得到。[流汗滑稽]）</p><p>——————–分割线——————–</p><p>线刷操作部分：</p><p>主要介绍QFIL的操作。</p><p>首先把手机连上电脑，打开电脑设备管理器，看能不能看到有“9008”字样的设备。或者直接打开QFIL，我这里显示的是“Qualcomm HS-USB QDLoader 9008 (COM10)”，大致这样就显示电脑已经识别了手机了。</p><p>我的没有需要特别操作连电脑就能识别。不能识别的检查驱动问题，网上搜一下进入9008模式的办法。</p><p>点击软件上方“Configuration”字样，再点击弹出的“FireHouse Configuration”字样。</p><p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/7.png"><br><em>点击这里</em></p><p>弹出的窗口中“Device Type”字样后面选择“ufs”，然后图中两个打勾的选项勾上。（其他的项目不用动。）</p><p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/8.png"><br><em>弹出的窗口中，按图中这样设置。</em></p><p>在软件主界面，“Select Build Type”字样下面选择“Flat Build”。“Select Programmer”字样下面点击右边的“Browse”按钮，选择firehouse握手文件。“Select Flat Build”字样下面右边“Load XML”按钮，先选择全部带“rawprogram”字样的文件，再选择全部带“patch”字样的文件。选择完成后点击蓝色“Download”按钮就行，效果如图所示。</p><p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/9.jpeg"></p><p>如果还有报错，就看报错却什么文件。我当时是却一个叫“abl.elf_64582”的文件，发现解压的线刷包文件中刚好有个“abl.elf”文件，后缀名中没有像其他文件那样的编号数字。果断重命名，线刷成功。</p><p><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/10.png"></p><p>看却啥就改啥，删代码或者改文件名都行。xda上那位改配置文件的老哥已经帮我们省了很多功夫。</p><p>——————–分割线——————–</p><p>收尾：</p><p>此时刷完以后，手机就应该有所反应了。我的是无限重启，此时按住音量+键不放，看准它重启一次完成后黑屏的瞬间（此时还未重启第二次）连接电脑，成功进入download模式。</p><p>打开LG UP，此时便可进行混刷，注意选择“Chip Erase”模式进行混刷。（重点）</p><p>文件下载：</p><p>可到xda上下载，软件一类的的网上可搜到。（如果酷友需要的话我整理自己的资源发上来。）</p><p>——————–分割线——————–</p><p>教程至此完结，希望能给各位酷友带来一点帮助。主要是精力有限（懒）[表面开心]，一篇教程拖了这么久，给大家说声抱歉。</p><p>后续给手机刷了MIUI，也是段艰难的经历（因为机锋没了[doge笑哭]）看酷友需要有时间出个刷MIUI的教程。</p><p>我只有百度网盘有空间分享，这还不如各位酷友自己去xda上下的快。[t耐克嘴]</p><p>绠短汲深，有误的地方还请酷友指正。也欢迎酷友在评论区留言提问与讨论。</p><p>码字不易，最后@酷安小编 赏个头条。[py交易][py交易]</p><h2 id="评论区"><a href="#评论区" class="headerlink" title="评论区"></a><a href="https://henrylogic.github.io/2023/07/06/LG-V30%E6%95%91%E7%A0%96%E6%95%99%E7%A8%8B%EF%BC%889008%EF%BC%8C%E7%90%86%E8%AE%BA%E5%85%A8%E7%89%88%E6%9C%AC%E9%80%9A%E7%94%A8%EF%BC%89/#%E8%AF%84%E8%AE%BA%E5%8C%BA" title="评论区"></a>评论区</h2><p>@墨染nlx</p><p>932就别试了[流汗滑稽]，cpu加密导致v30的握手文件用不了，得用专属的握手文件，而我们又没有932的握手文件[受虐滑稽]</p><p>@刘芳全</p><p>Vs996专用，QFIO刷入，需清空所有分区，刷完自动开机，无须硬格</p><p>下图网盘里有教程，用qifi清空所有分区线刷h933 10f救砖包，开机后顺便再刷三个kdz,这是vs996升官九或刷类原生必走的流程，搞不懂可以私我<br><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/11.jpeg"></p><p>不要怕有网络锁，或丢失串号，sn码之类的，那个后面可以写上的<br><img src="https://raw.githubusercontent.com/HenryLogic/PicGo/main/LG_V30_unbrick/12.jpeg"></p><p>@lbwnb_24k</p><p>楼主，Sahara fail怎么破，已经试过禁用签名，重打驱动，换端口换线等操作<br>本来是想刷个pie的，照着一个xda的帖子刷了h93310h，然后download和fastboot都进不去我的是us998的，电脑是Windows11但用的是usb2.0的口，另一台电脑是win10笔记本，但是没有usb3.0的口</p><p>@亨利147</p><p>我也遇到过这个错误，当时是在第一次线刷之后提示缺失文件，然后我删减了相应代码和改名相关文件后（期间QFIL软件一直没关闭）然后再刷时出现的这个错误。</p><p>我的解决方法当时就是把软件关了重启就可以正常刷了。</p><p>这里很抱歉只能给老哥如下建议老哥可以试试：</p><p>把所有文件准备好之后再打开QFIL。最好以管理员身份运行（QFIL软件安装目录最好也是全英文的）然后选择相应文件。如若还是报这个错，把软件关闭再运行一次。再次选完文件然后再刷试试看。</p><p>@lbwnb_24k</p><p>谢谢楼主，我花了45大洋，那个人换了个包，修了下usb3.0给我刷上去了，我想大概是包的问题</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;警告：本帖仅为经验分享，不保证方法对每一位酷友的设备可行。所以非常抱歉，我和原作者们无法对酷友通过此方法对自己的设备造成的任何损坏担负责任。&lt;/p&gt;
+&lt;p&gt;——————–分割线——————–&lt;/p&gt;
+&lt;p&gt;前言：&lt;/p&gt;
+&lt;p&gt;前阵子想着给自己的do版（日版）刷个MIUI，</summary>
+      
+    
+    
+    
+    <category term="酷安" scheme="http://henrylogic.github.io/categories/CoolApk/"/>
+    
+    
+    <category term="LG V30" scheme="http://henrylogic.github.io/tags/LG-V30/"/>
+    
+    <category term="9008" scheme="http://henrylogic.github.io/tags/9008/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://henrylogic.github.io/2023/07/06/Hello-World/"/>
+    <id>http://henrylogic.github.io/2023/07/06/Hello-World/</id>
+    <published>2023-07-05T17:34:01.000Z</published>
+    <updated>2023-10-01T14:18:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a><a href="https://henrylogic.github.io/2023/07/06/hello-world/#Quick-Start" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a><a href="https://henrylogic.github.io/2023/07/06/hello-world/#Create-a-new-post" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a><a href="https://henrylogic.github.io/2023/07/06/hello-world/#Run-server" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a><a href="https://henrylogic.github.io/2023/07/06/hello-world/#Generate-static-files" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a><a href="https://henrylogic.github.io/2023/07/06/hello-world/#Deploy-to-remote-sites" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>

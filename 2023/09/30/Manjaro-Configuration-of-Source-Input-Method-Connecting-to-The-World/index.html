@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>Manjaro配置源，输入法，连接世界 | Henry&#39;s Blog</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="Henry's Blog" type="application/atom+xml">
+  <meta name="description" content="个人自用方法，亲测可行，整理于网络。 更换国内源 1sudo pacman-mirrors -i -c China -m rank  这时系统会对中国的镜像进行测速，并在弹出窗口中列出 选择较快的两个即可 1sudo pacman -Syy  添加ArchLinuxCN源，文本编辑&#x2F;etc&#x2F;pacman.conf增添以下内容 123[archlinuxcn]SigLevel &#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Manjaro配置源，输入法，连接世界">
+<meta property="og:url" content="http://henrylogic.github.io/2023/09/30/Manjaro-Configuration-of-Source-Input-Method-Connecting-to-The-World/index.html">
+<meta property="og:site_name" content="Henry&#39;s Blog">
+<meta property="og:description" content="个人自用方法，亲测可行，整理于网络。 更换国内源 1sudo pacman-mirrors -i -c China -m rank  这时系统会对中国的镜像进行测速，并在弹出窗口中列出 选择较快的两个即可 1sudo pacman -Syy  添加ArchLinuxCN源，文本编辑&#x2F;etc&#x2F;pacman.conf增添以下内容 123[archlinuxcn]SigLevel &#x3D;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-08d61f749d727931c1c27c4969839229_720w.webp">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-2e006f7e8bea14965ef89a436937b1eb_720w.webp">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-1c0526ea8c171d8e33cde1d72d1937d5_720w.webp">
+<meta property="article:published_time" content="2023-09-29T17:41:51.000Z">
+<meta property="article:modified_time" content="2023-10-01T14:15:21.000Z">
+<meta property="article:author" content="Henry">
+<meta property="article:tag" content="Manjaro">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic2.zhimg.com/80/v2-08d61f749d727931c1c27c4969839229_720w.webp">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="">
+  <meta name="keywords" content=",Manjaro">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Henry&#39;s Blog">
+  <meta name="msapplication-starturl" content="http://henrylogic.github.io/2023/09/30/Manjaro-Configuration-of-Source-Input-Method-Connecting-to-The-World/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Henry&#39;s Blog">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Sat Sep 30 2023 01:41:51 GMT+0800">
+    <meta property="article:modified_time" content="Sun Oct 01 2023 22:15:21 GMT+0800">
+  
+
+  
+    <link rel="canonical" href="http://henrylogic.github.io/2023/09/30/Manjaro-Configuration-of-Source-Input-Method-Connecting-to-The-World/">
+  
+
+  
+  
+
+  
+  
+  
+
+  
+<link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">Henry&#39;s Blog</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="Enter the key words">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Henry</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>海内存知己，天涯若比邻。</div>
+      </div>
+      
+        <div class="mdui-grid-tile-buttons">
+          <a href="mailto:酷安@亨利147" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '酷安@亨利147'}"><i class="mdui-icon material-icons">email</i></a>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">主页</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">archive</i>
+        <div class="mdui-list-item-content">归档</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2023/09/">九月 2023<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2023/07/">七月 2023<span class="mdui-ripple sidebar_archives-count">2</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">分类</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/categories/CoolApk/">酷安<span class="mdui-ripple sidebar_archives-count">3</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">标签</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/9008/" rel="tag">9008<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/LG-V30/" rel="tag">LG V30<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Manjaro/" rel="tag">Manjaro<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Mi-Watch/" rel="tag">小米手表<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Software/" rel="tag">软件资源<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">关于</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">友情链接</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="https://github.com" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Github</a>
+        
+          <a href="http://www.lvvguo.cn/" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">铝锅的小站</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  
+<link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-9.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">Manjaro配置源，输入法，连接世界</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2023-09-30 / <i class="iconfont">&#xe601;</i> Henry</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEHklEQVR42u3aS3bbMBAEQN3/0skBEsndM3RMIsWVnk2CQHEBzOf1yxVcLwSYMGHChAmTCxMmTJhuz/SKr78MFPz9z3s+//fzPfkM86fejoAJEyZMmA5i+mJrjO/ZTDe5v33jZo2YMGHChOk8pnzqyUTbp/IP8Hm09lNhwoQJEyZMySTePdWGnTniDA4TJkyYMGHavKYNUPN0bZ50xoQJEyZMmDYJ0E1CNi+F5iMkB4gfyIVjwoQJE6abMbWh6RN//9P+JkyYMGHCdBum9rpqa//81Gp5Zbn07UoxYcKECdMRTPm0ZiXMqxa/gRi+BRMmTJgwHcGUb/N5IfCqFp/kc7YHlyIxjQkTJkyYDmLKN9H8xbNS5axImSSm68+MCRMmTJgOYtpsye3Wnn+YqzhaIEyYMGHCdCpTsoXni58dINpGnM2B5ovZYsKECROmg5g2Q+cHiFkz0FUBdpuqxoQJEyZMJzG1adz8d17azN/VLr6dGyZMmDBhOompaGQZBb0tWZ6uzY8Oydy+OBBgwoQJE6aHMw1bW4JwdLaMfTjd3oMJEyZMmE5lyqfYku3LnFcVMr89F44JEyZMmG7MtHlxTtkGt5vE7j7tiwkTJkyYTmKatcvkh4ZZw02CmCeUE7L63IQJEyZMmB7C1BYR81durrYY2aIPc+GYMGHChOmxTO1m326ubbK4TfvmwXzBhwkTJkyYjmDaTLFtvpktO2/BmRVH346DCRMmTJgOYkoW3zbutOnaPLncclzW34QJEyZMmB7IdFUSdvY755uRzd6CCRMmTJhOYmoDy1lrzqwI2jYMzQLg1bkJEyZMmDDdnilvbdmncRPQ/GPkpcp8ZEyYMGHCdB5THl62jTJt8BklXsun8qQwJkyYMGE6lWmThM1TwMkhYJNKbgPgKFzHhAkTJkxHMM1SvW3zzazRpw2J2w9c58IxYcKECdMDmdqgdJZITYLktjiaHyPypzBhwoQJ03lMyUBtkNyWQmcb9ixEx4QJEyZMmPLEa755t8nZWal19nkuyBBgwoQJE6ZHMeUBbVu8nIXQG6b2mIIJEyZMmM5m2pQM9+nd5L05xzcmeTFhwoQJ0wOZ2qJmu7D9+G2wPRsTEyZMmDCdx9SmZdvS4GtxbQLafPy3o2HChAkTpiOYZgXFZCNvx9k36CTzKcbBhAkTJkxHMM225w3K7MCxmXNegsWECRMmTKcyzRaZBJB54jUPX/cziVp/MGHChAnTcUyzDTXZwtsk7OYjbZLImDBhwoQJ06ahZ0Yw+ySfjwLRujBhwoQJ03/MNEv7boLefNntAeXtfzFhwoQJ03FMs2adzVFgX4DcfM5vzIVjwoQJE6abMbVNMG3ydHZPC5QXOKPjAiZMmDBhOoLJFR0IXJgwYcKECRMmFyZMmO5y/QZlFOw8mdKNKAAAAABJRU5ErkJggg==">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=Manjaro配置源，输入法，连接世界&url=http://henrylogic.github.io/2023/09/30/Manjaro-Configuration-of-Source-Input-Method-Connecting-to-The-World/&pic=http://henrylogic.github.io/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到微博</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=Manjaro配置源，输入法，连接世界&url=http://henrylogic.github.io/2023/09/30/Manjaro-Configuration-of-Source-Input-Method-Connecting-to-The-World/&via=Henry" target="_blank" class="mdui-ripple">分享到Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://henrylogic.github.io/2023/09/30/Manjaro-Configuration-of-Source-Input-Method-Connecting-to-The-World/" target="_blank" class="mdui-ripple">分享到Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=http://henrylogic.github.io/2023/09/30/Manjaro-Configuration-of-Source-Input-Method-Connecting-to-The-World/" target="_blank" class="mdui-ripple">分享到Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://henrylogic.github.io/2023/09/30/Manjaro-Configuration-of-Source-Input-Method-Connecting-to-The-World/&title=Manjaro配置源，输入法，连接世界" target="_blank" class="mdui-ripple">分享到LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=Henry&#39;s Blog&title=Manjaro配置源，输入法，连接世界&summary=&pics=http://henrylogic.github.io/images/favicon.png&url=http://henrylogic.github.io/2023/09/30/Manjaro-Configuration-of-Source-Input-Method-Connecting-to-The-World/" target="_blank" class="mdui-ripple">分享到QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=http://henrylogic.github.io/2023/09/30/Manjaro-Configuration-of-Source-Input-Method-Connecting-to-The-World/&text=Manjaro配置源，输入法，连接世界" target="_blank" class="mdui-ripple">分享到Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <p>个人自用方法，亲测可行，整理于网络。</p>
+<p>更换国内源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman-mirrors -i -c China -m rank</span><br></pre></td></tr></table></figure>
+
+<p>这时系统会对中国的镜像进行测速，并在弹出窗口中列出</p>
+<p>选择较快的两个即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy</span><br></pre></td></tr></table></figure>
+
+<p>添加ArchLinuxCN源，文本编辑&#x2F;etc&#x2F;pacman.conf增添以下内容</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line">Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch</span><br></pre></td></tr></table></figure>
+
+<p>然后执行以下命令以更新缓存以及导入密钥链。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy &amp;&amp; sudo pacman -S archlinuxcn-keyring</span><br></pre></td></tr></table></figure>
+
+
+<p>执行以下命令更新系统以及软件包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syyu</span><br></pre></td></tr></table></figure>
+
+<p>输入法安装</p>
+<p>安装fcitx5（输入法框架）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S fcitx5-im</span><br></pre></td></tr></table></figure>
+
+<p>配置fcitx5的环境变量：</p>
+<p>主目录下新建.xprofile文件，以文本模式编辑</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export XMODIFIERS=@im=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br></pre></td></tr></table></figure>
+
+<p>安装fcitx5-rime（输入法引擎）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S fcitx5-rime</span><br></pre></td></tr></table></figure>
+
+<p>安装rime-cloverpinyin（输入方案）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S rime-cloverpinyin</span><br></pre></td></tr></table></figure>
+
+<p>如果出现问题可能还需要做下面这步：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S base-devel</span><br></pre></td></tr></table></figure>
+
+<p>创建并写入rime-cloverpinyin的输入方案：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano ~/.local/share/fcitx5/rime/default.custom.yaml</span><br></pre></td></tr></table></figure>
+
+<p>内容为：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">patch:</span><br><span class="line">  &quot;menu/page_size&quot;: 5</span><br><span class="line">  schema_list:</span><br><span class="line">    - schema: clover</span><br></pre></td></tr></table></figure>
+
+<p>clash GUI</p>
+<p>clash 是一款非常强大的上网神器，现在在 Linux 平台下也推出了 GUI 版本。</p>
+<p>可以直接通过 yay 安装，也可以手动安装：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yay -S clash-for-windows-bin</span><br></pre></td></tr></table></figure>
+
+<p>点击 general 勾选 allow lan、tun mode、mixin、start with linux 等选项。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-08d61f749d727931c1c27c4969839229_720w.webp"></p>
+<p>在系统设置中，手动添加全局代理 127.0.0.1:7890。</p>
+<p><img src="https://pic4.zhimg.com/80/v2-2e006f7e8bea14965ef89a436937b1eb_720w.webp"></p>
+<p>注意！Mozilla 系列软件是不会直接走系统代理的，如 firefox、thunderbird 等都需要在 settings 中使用手动设置代理。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-1c0526ea8c171d8e33cde1d72d1937d5_720w.webp"></p>
+<p>添加终端代理，在 ~&#x2F;.zshrc 中添加以下命令：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alias setproxy=&quot;export ALL_PROXY=socks5://127.0.0.1:7890; echo &#x27;SET PROXY SUCCESS!!!&#x27;&quot;</span><br><span class="line">alias unsetproxy=&quot;unset ALL_PROXY; echo &#x27;UNSET PROXY SUCCESS!!!&#x27;&quot;</span><br><span class="line"># 打开终端自动开启代理</span><br><span class="line">setproxy</span><br></pre></td></tr></table></figure>
+
+<p>source 一下 zshrc 文件，并输入 setproxy 命令即可打开代理。</p>
+<p>验证代理是否生效，可输入以下命令并观察请求是否先发送至 127.0.0.1:7890 处：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -vv http://www.youtube.com/</span><br></pre></td></tr></table></figure>
+
+<p>由于是 tar.gz 安装，所以安装完成后没有可视化的启动程序。</p>
+<p>我们自建一个启动程序，在 ~&#x2F;.local&#x2F;share&#x2F;applications 下新建以下文件，提前下载好一个 PNG 格式的 clash 图标放在安装目录下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~/.local/share/applications/clash.desktop</span><br><span class="line"></span><br><span class="line">[Desktop Entry]</span><br><span class="line">Type=Application</span><br><span class="line">Name=Clash For Linux</span><br><span class="line">Exec=/usr/local/clash/cfw</span><br><span class="line">Icon=/usr/local/clash/clash.png</span><br><span class="line">Terminal=false</span><br><span class="line">Categories=program;InstantMessaging</span><br></pre></td></tr></table></figure>
+      <blockquote class="mdui-m-t-5">
+        
+        <strong>本文链接：</strong><a href="http://henrylogic.github.io/2023/09/30/Manjaro-Configuration-of-Source-Input-Method-Connecting-to-The-World/">http://henrylogic.github.io/2023/09/30/Manjaro-Configuration-of-Source-Input-Method-Connecting-to-The-World/</a>
+      </blockquote>
+      
+    </div>
+    <footer class="mdui-card-actions">
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/Manjaro/" rel="tag">Manjaro</a>
+      
+    </footer>
+    
+  </article>
+  
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2023/09/23/Personal-Solution-to-the-Problem-of-Missynchronization-of-Xiaomi-Watches/">
+        下一篇&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+  <div id="comment" class="mdui-m-t-5">
+    <div>
+    <section id="comments" class="comments">
+      <script src="https://giscus.app/client.js"
+              data-repo="HenryLogic/giscus"
+              data-repo-id="R_kgDOKVz7yg"
+              data-category="Announcements"
+              data-category-id="DIC_kwDOKVz7ys4CZeNF"
+              data-mapping="title"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="bottom"
+              data-theme="light"
+              data-lang="zh-CN"
+              crossorigin="anonymous"
+              async>
+      </script>
+     </section>
+</div>
+
+  </div>
+
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2023 - 2023 Henry<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  
+<script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+
+</body>
+</html>
