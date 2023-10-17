@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://henrylogic.github.io/about/index.html</loc>
+    
+    <lastmod>2023-10-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://henrylogic.github.io/2023/07/06/LG-V30-Brick-Rescue-Tutorial/</loc>
+    
+    <lastmod>2023-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://henrylogic.github.io/2023/07/06/Hello-World/</loc>
+    
+    <lastmod>2023-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://henrylogic.github.io/2023/09/30/Manjaro-Configuration-of-Source-Input-Method-Connecting-to-The-World/</loc>
+    
+    <lastmod>2023-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://henrylogic.github.io/2023/09/11/Xiaohongshu-Version-7.90.0-is-Shared-on-123-Online-Drive/</loc>
+    
+    <lastmod>2023-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://henrylogic.github.io/2023/09/23/Personal-Solution-to-the-Problem-of-Missynchronization-of-Xiaomi-Watches/</loc>
+    
+    <lastmod>2023-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  <url>
+    <loc>http://henrylogic.github.io/</loc>
+    <lastmod>2023-10-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>http://henrylogic.github.io/tags/LG-V30/</loc>
+    <lastmod>2023-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://henrylogic.github.io/tags/9008/</loc>
+    <lastmod>2023-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://henrylogic.github.io/tags/Mi-Watch/</loc>
+    <lastmod>2023-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://henrylogic.github.io/tags/Software/</loc>
+    <lastmod>2023-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://henrylogic.github.io/tags/Manjaro/</loc>
+    <lastmod>2023-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>http://henrylogic.github.io/categories/CoolApk/</loc>
+    <lastmod>2023-10-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+</urlset>
