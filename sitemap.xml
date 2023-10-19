@@ -58,43 +58,43 @@
 
   <url>
     <loc>http://henrylogic.github.io/</loc>
-    <lastmod>2023-10-17</lastmod>
+    <lastmod>2023-10-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
+    <loc>http://henrylogic.github.io/tags/Manjaro/</loc>
+    <lastmod>2023-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://henrylogic.github.io/tags/LG-V30/</loc>
-    <lastmod>2023-10-17</lastmod>
+    <lastmod>2023-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://henrylogic.github.io/tags/9008/</loc>
-    <lastmod>2023-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://henrylogic.github.io/tags/Manjaro/</loc>
-    <lastmod>2023-10-17</lastmod>
+    <lastmod>2023-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://henrylogic.github.io/tags/Mi-Watch/</loc>
-    <lastmod>2023-10-17</lastmod>
+    <lastmod>2023-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://henrylogic.github.io/tags/Software/</loc>
-    <lastmod>2023-10-17</lastmod>
+    <lastmod>2023-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -103,7 +103,7 @@
   
   <url>
     <loc>http://henrylogic.github.io/categories/CoolApk/</loc>
-    <lastmod>2023-10-17</lastmod>
+    <lastmod>2023-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
